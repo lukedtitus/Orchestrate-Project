@@ -32,14 +32,25 @@ namespace Orchestrate.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(ArtistCreate model)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid) return View(model);
+
+            var service = CreateArtistService();
+
+            if (service.CreateArtist(model))
             {
-                return View(model);   
-            }
+                TempData["SaveResult"] = "Artist was created.";
+                return RedirectToAction("Index");
+            };
+            ModelState.AddModelError("", "Artist could not be created");
+
+            return View(model);
+        }
+
+        private ArtistService CreateArtistService()
+        {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new ArtistService(userId);
-            service.CreateArtist(model);
-            return RedirectToAction("Index");
+            return service;
         }
     }
 }
