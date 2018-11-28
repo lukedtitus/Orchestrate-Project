@@ -54,6 +54,44 @@ namespace Orchestrate.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var service = CreateArtistService();
+            var detail = service.GetArtistById(id);
+            var model =
+                new ArtistEdit
+                {
+                    ArtistId = detail.ArtistId,
+                    ArtistName = detail.ArtistName,
+                    NumberOfMembers = detail.NumberOfMembers,
+                    Genre = detail.Genre,
+                    ProjectsReleased = detail.ProjectsReleased
+                };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit (int id, ArtistEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.ArtistId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateArtistService();
+
+            if (service.UpdateArtist(model))
+            {
+                TempData["SaveResult"] = "Your note was updated.";
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
         private ArtistService CreateArtistService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

@@ -74,5 +74,23 @@ namespace Orchestrate.Services
                     };
             }
         }
+
+        public bool UpdateArtist(ArtistEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Artists
+                        .Single(e => e.ArtistId == model.ArtistId && e.OwnerId == _userId);
+
+                entity.ArtistName = model.ArtistName;
+                entity.NumberOfMembers = model.NumberOfMembers;
+                entity.Genre = model.Genre;
+                entity.ProjectsReleased = model.ProjectsReleased;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
