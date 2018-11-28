@@ -1,4 +1,7 @@
-﻿using Orchestrate.Models;
+﻿using Microsoft.AspNet.Identity;
+using Orchestrate.Data;
+using Orchestrate.Models;
+using Orchestrate.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +16,9 @@ namespace Orchestrate.WebMVC.Controllers
         // GET: Artist
         public ActionResult Index()
         {
-            var model = new ArtistListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new ArtistService(userId);
+            var model = service.GetArtists();
             return View(model);
         }
 
@@ -22,16 +27,19 @@ namespace Orchestrate.WebMVC.Controllers
         {
             return View();
         }
-
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(ArtistCreate model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-
+                return View(model);   
             }
-            return View(model);
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new ArtistService(userId);
+            service.CreateArtist(model);
+            return RedirectToAction("Index");
         }
     }
 }

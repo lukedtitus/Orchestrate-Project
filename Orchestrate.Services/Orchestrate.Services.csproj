@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArtistService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Orchestrate.Data\Orchestrate.Data.csproj">
+      <Project>{72310f0f-b9ba-4a09-adbe-98400e5af13f}</Project>
+      <Name>Orchestrate.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Orchestrate.Models\Orchestrate.Models.csproj">
+      <Project>{6c4b33bb-5479-4f8c-86df-d9c43b3eee0d}</Project>
+      <Name>Orchestrate.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
