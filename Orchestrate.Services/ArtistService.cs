@@ -54,5 +54,25 @@ namespace Orchestrate.Services
                 return query.ToArray();
             }
         }
+
+        public ArtistDetail GetArtistById(int artistId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Artists
+                        .Single(e => e.ArtistId == artistId && e.OwnerId == _userId);
+                return
+                    new ArtistDetail
+                    {
+                        ArtistId = entity.ArtistId,
+                        ArtistName = entity.ArtistName,
+                        NumberOfMembers = entity.NumberOfMembers,
+                        Genre = entity.Genre,
+                        ProjectsReleased = entity.ProjectsReleased
+                    };
+            }
+        }
     }
 }

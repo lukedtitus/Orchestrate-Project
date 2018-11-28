@@ -46,6 +46,14 @@ namespace Orchestrate.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateArtistService();
+            var model = svc.GetArtistById(id);
+
+            return View(model);
+        }
+
         private ArtistService CreateArtistService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
