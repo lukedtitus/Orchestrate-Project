@@ -92,6 +92,26 @@ namespace Orchestrate.WebMVC.Controllers
             return View();
         }
 
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateArtistService();
+            var model = svc.GetArtistById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteArtist(int id)
+        {
+            var service = CreateArtistService();
+            service.DeleteArtist(id);
+            TempData["SaveResult"] = "Your note was deleted.";
+            return RedirectToAction("Index");
+        }
+
         private ArtistService CreateArtistService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

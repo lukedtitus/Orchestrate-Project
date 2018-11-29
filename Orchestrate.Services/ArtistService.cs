@@ -92,5 +92,19 @@ namespace Orchestrate.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteArtist(int artistId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Artists
+                        .Single(e => e.ArtistId == artistId && e.OwnerId == _userId);
+
+                ctx.Artists.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

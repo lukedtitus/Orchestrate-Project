@@ -33,6 +33,8 @@ namespace Orchestrate.Data
         }
 
         public DbSet<Artist> Artists { get; set; }
+        public DbSet<Project> Projects { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
@@ -44,6 +46,8 @@ namespace Orchestrate.Data
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
         }
+
+        
     }
 
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
