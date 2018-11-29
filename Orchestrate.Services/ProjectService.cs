@@ -79,5 +79,39 @@ namespace Orchestrate.Services
                     };
             }
         }
+
+        public bool UpdateProject(ProjectEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Projects
+                        .Single(e => e.ProjectId == model.ProjectId && e.OwnerId == _userId);
+
+                entity.Name = model.Name;
+                entity.Artist = model.Artist;
+                entity.Genre = model.Genre;
+                entity.ReleaseYear = model.ReleaseYear;
+                entity.Cost = model.Cost;
+                entity.Sales = model.Sales;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteProject(int projectId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Projects
+                        .Single(e => e.ProjectId == projectId && e.OwnerId == _userId);
+
+                ctx.Projects.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
