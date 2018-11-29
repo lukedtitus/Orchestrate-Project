@@ -44,6 +44,14 @@ namespace Orchestrate.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateProjectService();
+            var model = svc.GetProjectById(id);
+
+            return View(model);
+        }
+
         private ProjectService CreateProjectService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
