@@ -64,6 +64,14 @@
     <Compile Include="Migrations\201811291529349_AddedProjectClass.Designer.cs">
       <DependentUpon>201811291529349_AddedProjectClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811291555127_stuff.cs" />
+    <Compile Include="Migrations\201811291555127_stuff.Designer.cs">
+      <DependentUpon>201811291555127_stuff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811291644560_newstuff.cs" />
+    <Compile Include="Migrations\201811291644560_newstuff.Designer.cs">
+      <DependentUpon>201811291644560_newstuff.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,6 +86,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811291529349_AddedProjectClass.resx">
       <DependentUpon>201811291529349_AddedProjectClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811291555127_stuff.resx">
+      <DependentUpon>201811291555127_stuff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811291644560_newstuff.resx">
+      <DependentUpon>201811291644560_newstuff.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
