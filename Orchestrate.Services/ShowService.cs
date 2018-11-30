@@ -77,5 +77,38 @@ namespace Orchestrate.Services
                     };
             }
         }
+
+        public bool UpdateShow(ShowEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Shows
+                        .Single(e => e.ShowId == model.ShowId && e.OwnerId == _userId);
+
+                entity.Artist = model.Artist;
+                entity.CityOfVenue = model.CityOfVenue;
+                entity.Date = model.Date;
+                entity.Cost = model.Cost;
+                entity.Sales = model.Sales;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteShow(int showId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Shows
+                        .Single(e => e.ShowId == showId && e.OwnerId == _userId);
+
+                ctx.Shows.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
