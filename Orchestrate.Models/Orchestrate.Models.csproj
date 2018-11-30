@@ -63,6 +63,10 @@
     <Compile Include="ProjectEdit.cs" />
     <Compile Include="ProjectListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowCreate.cs" />
+    <Compile Include="ShowDetail.cs" />
+    <Compile Include="ShowEdit.cs" />
+    <Compile Include="ShowListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

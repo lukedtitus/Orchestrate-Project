@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Orchestrate.Models.ProjectListItem>
+﻿@model IEnumerable<Orchestrate.Models.ShowListItem>
 
 @{
     ViewBag.Title = "Index";
@@ -21,13 +21,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.ProjectId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.ShowId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Artist)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
         </th>
         <th></th>
     </tr>
@@ -36,18 +36,18 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.ProjectId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.ShowId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Artist)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ProjectId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ProjectId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ProjectId })
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
         </tr>
     }

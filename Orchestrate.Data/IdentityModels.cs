@@ -34,6 +34,7 @@ namespace Orchestrate.Data
 
         public DbSet<Artist> Artists { get; set; }
         public DbSet<Project> Projects { get; set; }
+        public DbSet<Show> Shows { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
