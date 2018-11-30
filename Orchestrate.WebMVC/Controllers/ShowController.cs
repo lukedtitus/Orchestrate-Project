@@ -44,6 +44,14 @@ namespace Orchestrate.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateShowService();
+            var model = svc.GetShowById(id);
+
+            return View(model);
+        }
+
         private ShowService CreateShowService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

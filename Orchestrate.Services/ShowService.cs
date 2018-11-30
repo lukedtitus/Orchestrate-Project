@@ -56,5 +56,26 @@ namespace Orchestrate.Services
                 return query.ToArray();
             }
         }
+
+        public ShowDetail GetShowById(int showId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Shows
+                        .Single(e => e.ShowId == showId && e.OwnerId == _userId);
+                return
+                    new ShowDetail
+                    {
+                        ShowId = entity.ShowId,
+                        Artist = entity.Artist,
+                        CityOfVenue = entity.CityOfVenue,
+                        Date = entity.Date,
+                        Cost = entity.Cost,
+                        Sales = entity.Sales
+                    };
+            }
+        }
     }
 }
