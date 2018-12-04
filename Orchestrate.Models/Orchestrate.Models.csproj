@@ -58,6 +58,7 @@
     <Compile Include="ArtistDetail.cs" />
     <Compile Include="ArtistEdit.cs" />
     <Compile Include="ArtistListItem.cs" />
+    <Compile Include="Chart.cs" />
     <Compile Include="ProjectCreate.cs" />
     <Compile Include="ProjectDetail.cs" />
     <Compile Include="ProjectEdit.cs" />

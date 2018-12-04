@@ -11,7 +11,7 @@ namespace Orchestrate.Models
         public int ProjectId { get; set; }
         public string Name { get; set; }
         public string Artist { get; set; }
-        public string Genre { get; set; }
+        public GenreEnum Genre { get; set; }
         public int ReleaseYear { get; set; }
         public double Cost { get; set; }
         public double Sales { get; set; }

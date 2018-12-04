@@ -51,7 +51,7 @@ namespace Orchestrate.Services
                             {
                                 ProjectId = e.ProjectId,
                                 Name = e.Name,
-                                Artist = e.Artist
+                                Artist = e.Artist,
                             }
                     );
                 return query.ToArray();

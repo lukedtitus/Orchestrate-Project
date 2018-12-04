@@ -13,7 +13,7 @@ namespace Orchestrate.Models
         public int ProjectId { get; set; }
         public string Name { get; set; }
         public string Artist { get; set; }
-        public string Genre { get; set; }
+        public GenreEnum Genre { get; set; }
 
         [Display (Name="Year of Release")]
         public int ReleaseYear { get; set; }
