@@ -7,13 +7,13 @@ namespace Orchestrate.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class stuff : IMigrationMetadata
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(stuff));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201811291555127_stuff"; }
+            get { return "201812041620519_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

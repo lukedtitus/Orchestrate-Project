@@ -56,25 +56,13 @@
   <ItemGroup>
     <Compile Include="Artist.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\201811281545525_InitialCreate.cs" />
-    <Compile Include="Migrations\201811281545525_InitialCreate.Designer.cs">
-      <DependentUpon>201811281545525_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201812041620519_InitialCreate.cs" />
+    <Compile Include="Migrations\201812041620519_InitialCreate.Designer.cs">
+      <DependentUpon>201812041620519_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811291529349_AddedProjectClass.cs" />
-    <Compile Include="Migrations\201811291529349_AddedProjectClass.Designer.cs">
-      <DependentUpon>201811291529349_AddedProjectClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811291555127_stuff.cs" />
-    <Compile Include="Migrations\201811291555127_stuff.Designer.cs">
-      <DependentUpon>201811291555127_stuff.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811291644560_newstuff.cs" />
-    <Compile Include="Migrations\201811291644560_newstuff.Designer.cs">
-      <DependentUpon>201811291644560_newstuff.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811301459114_AddedShowsTable.cs" />
-    <Compile Include="Migrations\201811301459114_AddedShowsTable.Designer.cs">
-      <DependentUpon>201811301459114_AddedShowsTable.cs</DependentUpon>
+    <Compile Include="Migrations\201812041652405_genreEnums.cs" />
+    <Compile Include="Migrations\201812041652405_genreEnums.Designer.cs">
+      <DependentUpon>201812041652405_genreEnums.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Project.cs" />
@@ -86,20 +74,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811281545525_InitialCreate.resx">
-      <DependentUpon>201811281545525_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812041620519_InitialCreate.resx">
+      <DependentUpon>201812041620519_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811291529349_AddedProjectClass.resx">
-      <DependentUpon>201811291529349_AddedProjectClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811291555127_stuff.resx">
-      <DependentUpon>201811291555127_stuff.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811291644560_newstuff.resx">
-      <DependentUpon>201811291644560_newstuff.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811301459114_AddedShowsTable.resx">
-      <DependentUpon>201811301459114_AddedShowsTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812041652405_genreEnums.resx">
+      <DependentUpon>201812041652405_genreEnums.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

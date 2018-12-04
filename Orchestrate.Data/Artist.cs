@@ -12,46 +12,46 @@ namespace Orchestrate.Data
         Alternative = 1,
         Blues,
         Comedy,
-        [Display (Name = "Children's Music")]
+        [Display(Name = "Children's Music")]
         ChildrensMusic,
         Classical,
         Country,
         Electronic,
         Holiday,
         Opera,
-        [Display (Name = "Singer/Songwriter")]
+        [Display(Name = "Singer/Songwriter")]
         SingerSongwriter,
         Jazz,
         Latino,
-        [Display (Name = "New Age")]
+        [Display(Name = "New Age")]
         NewAge,
         Pop,
-        [Display (Name = "R&B/Soul")]
+        [Display(Name = "R&B/Soul")]
         RnbSoul,
         Soundtrack,
         Dance,
-        [Display (Name = "Hip-Hop/Rap")]
+        [Display(Name = "Hip-Hop/Rap")]
         HipHopRap,
         World,
         Rock,
-        [Display (Name = "Christian & Gospel")]
+        [Display(Name = "Christian & Gospel")]
         ChristianGospel,
         Vocal,
         Reggae,
-        [Display (Name = "Easy Listening")]
+        [Display(Name = "Easy Listening")]
         EasyListening,
-        [Display (Name = "J-Pop")]
+        [Display(Name = "J-Pop")]
         JPop,
         Enka,
         Kayokyoku,
-        [Display (Name = "Fitness & Workout")]
+        [Display(Name = "Fitness & Workout")]
         FitnessWorkout,
-        [Display (Name = "K-Pop")]
+        [Display(Name = "K-Pop")]
         Kpop,
         Karaoke,
         Instrumental,
         Brazilian,
-        [Display (Name = "Spoken Word")]
+        [Display(Name = "Spoken Word")]
         SpokenWord,
     }
 

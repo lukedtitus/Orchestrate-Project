@@ -7,13 +7,13 @@ namespace Orchestrate.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class newstuff : IMigrationMetadata
+    public sealed partial class genreEnums : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(newstuff));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(genreEnums));
         
         string IMigrationMetadata.Id
         {
-            get { return "201811291644560_newstuff"; }
+            get { return "201812041652405_genreEnums"; }
         }
         
         string IMigrationMetadata.Source

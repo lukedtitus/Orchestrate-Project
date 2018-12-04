@@ -73,5 +73,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Orchestrate.Data\Orchestrate.Data.csproj">
+      <Project>{72310f0f-b9ba-4a09-adbe-98400e5af13f}</Project>
+      <Name>Orchestrate.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

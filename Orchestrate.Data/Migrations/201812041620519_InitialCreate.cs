@@ -21,6 +21,21 @@ namespace Orchestrate.Data.Migrations
                 .PrimaryKey(t => t.ArtistId);
             
             CreateTable(
+                "dbo.Project",
+                c => new
+                    {
+                        ProjectId = c.Int(nullable: false, identity: true),
+                        OwnerId = c.Guid(nullable: false),
+                        Name = c.String(nullable: false),
+                        Artist = c.String(nullable: false),
+                        Genre = c.String(nullable: false),
+                        ReleaseYear = c.Int(nullable: false),
+                        Cost = c.Double(nullable: false),
+                        Sales = c.Double(nullable: false),
+                    })
+                .PrimaryKey(t => t.ProjectId);
+            
+            CreateTable(
                 "dbo.IdentityRole",
                 c => new
                     {
@@ -43,6 +58,20 @@ namespace Orchestrate.Data.Migrations
                 .ForeignKey("dbo.ApplicationUser", t => t.ApplicationUser_Id)
                 .Index(t => t.IdentityRole_Id)
                 .Index(t => t.ApplicationUser_Id);
+            
+            CreateTable(
+                "dbo.Show",
+                c => new
+                    {
+                        ShowId = c.Int(nullable: false, identity: true),
+                        OwnerId = c.Guid(nullable: false),
+                        Artist = c.String(nullable: false),
+                        CityOfVenue = c.String(nullable: false),
+                        Date = c.DateTime(nullable: false),
+                        Cost = c.Double(nullable: false),
+                        Sales = c.Double(nullable: false),
+                    })
+                .PrimaryKey(t => t.ShowId);
             
             CreateTable(
                 "dbo.ApplicationUser",
@@ -105,8 +134,10 @@ namespace Orchestrate.Data.Migrations
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
+            DropTable("dbo.Show");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
+            DropTable("dbo.Project");
             DropTable("dbo.Artist");
         }
     }

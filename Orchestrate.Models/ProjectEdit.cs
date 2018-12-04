@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Orchestrate.Data;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +10,7 @@ namespace Orchestrate.Models
 {
     public class ProjectEdit
     {
+        [Display (Name = "ID Number")]
         public int ProjectId { get; set; }
         public string Name { get; set; }
         public string Artist { get; set; }

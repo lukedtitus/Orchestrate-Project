@@ -11,6 +11,7 @@ namespace Orchestrate.Models
     {
         [Required]
         public string Artist { get; set; }
+        [Display (Name = "City of Venue")]
         public string CityOfVenue { get; set; }
         public DateTime Date { get; set; }
         public double Cost { get; set; }
