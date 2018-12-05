@@ -53,3 +53,66 @@
     }
 
 </table>
+
+@*<div class="col-lg-6">*@
+<div class="container">
+    <div class="row">
+        <p class="chart-name">Projects by Genre</p>
+        <div class="form-group">
+            <canvas id="genreChart" width="400" height="150"></canvas>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/Scripts/Chart.js"></script>
+    <script>
+        var c = document.getElementById("genreChart");
+        var ctx = c.getContext("2d");
+        var myDonutChart = new Chart(ctx, {
+            type: 'doughnut',
+            data:
+            {
+                datasets: [{
+                    label: 'enter enum values lol',
+                    data: [@ViewBag.GenreData],
+                    backgroundColor: [
+                        '#00CCFF',
+                        '#CC9966',
+                        '#660000',
+                        '#003333',
+                        '#0000FF',
+                        '#FFFF00',
+                        '#FF6600',
+                        '#CCFFFF',
+                        '#9999FF',
+                        '#999900',
+                        '#996666',
+                        '#BF360C',
+                        '#607D8B',
+                        '#F48FB1',
+                        '#990099',
+                        '#00BCD4',
+                        '#795548',
+                        '#33FF33',
+                        '#F9E79F',
+                        '#FF0000',
+                        '#5D6D7E',
+                        '#839192',
+                        '#9933FF',
+                        '#66FFFF',
+                        '#003300',
+                        '#FFFF99',
+                        '#333399',
+                        '#990033',
+                        '#FF33CC',
+                        '#CCFF00',
+                        '#666666',
+                        '#666633',
+                        '#99CCCC'
+                    ],
+                }]
+            }
+        });
+    </script>
+}

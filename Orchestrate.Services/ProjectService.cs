@@ -115,7 +115,7 @@ namespace Orchestrate.Services
             }
         }
 
-        public string GetGenreDataById(int id)
+        public string GetGenreData()
         {
             int
                 alternative = 0,
@@ -152,7 +152,7 @@ namespace Orchestrate.Services
                 braz = 0,
                 spokword = 0;
 
-            var projectList = GetProjectsById(id);
+            var projectList = db.Projects.Where(e => e.OwnerId == _userId);          
 
             foreach (Project project in projectList)
             {
@@ -261,12 +261,6 @@ namespace Orchestrate.Services
             }
 
             return ($"{alternative},{blues},{comedy},{childMusic}, {classical}, {country}, {electronic}, {holiday}, {opera}, {singsong}, {jazz}, {latino}, {newAge}, {pop}, {rnbSoul}, {soundtrack}, {dance}, {hipHopRap}, {world}, {rock}, {chrgos}, {vocal}, {reggae}, {ealist}, {jPop}, {enka}, {kayokyoku}, {fitwork}, {kPop}, {karaoke}, {instr}, {braz}, {spokword}, 0");
-        }
-
-        private List<Project> GetProjectsById(int id)
-        {
-            var projectList = db.Projects.Where(g => g.ProjectId == id).ToList();
-            return projectList;
         }
     }
 }

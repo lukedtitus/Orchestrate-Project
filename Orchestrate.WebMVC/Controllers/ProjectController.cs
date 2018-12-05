@@ -15,11 +15,21 @@ namespace Orchestrate.WebMVC.Controllers
         // GET: Project
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new ProjectService(userId);
+            var service = CreateProjectService();
             var model = service.GetProjects();
+            ViewBag.GenreData = service.GetGenreData();
             return View(model);
+
+            //return View(service.GetProjectById(id));
         }
+
+        //public ActionResult Index(int id)
+        //{
+        //    var service = CreateProjectService();
+
+        //    ViewBag.GenreData = service.GetGenreDataById(id);
+        //    return View(service.GetProjectById(id));
+        //}
 
         public ActionResult Create()
         {
@@ -50,6 +60,15 @@ namespace Orchestrate.WebMVC.Controllers
             var model = svc.GetProjectById(id);
 
             return View(model);
+        }
+
+        public ActionResult GenreChart(int id)
+        {
+            var svc = CreateProjectService();
+            var service = CreateProjectService();
+
+            ViewBag.GenreData = service.GetGenreData();
+            return View(service.GetProjectById(id));
         }
 
         public ActionResult Edit(int id)
