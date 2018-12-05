@@ -13,7 +13,7 @@ namespace Orchestrate.Models
         [Display (Name="ID Number")]
         public int ProjectId { get; set; }
         public string Name { get; set; }
-        public string Artist { get; set; }
+        public int ArtistId { get; set; }
         public GenreEnum Genre { get; set; }
 
         [Display (Name="Year of Release")]
@@ -21,5 +21,7 @@ namespace Orchestrate.Models
         public double Cost { get; set; }
         public double Sales { get; set; }
         public override string ToString() => $"[{ProjectId}] {Name}";
+
+        public Artist Artist { get; set; }
     }
 }

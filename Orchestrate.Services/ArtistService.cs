@@ -106,5 +106,10 @@ namespace Orchestrate.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        //public bool GetProjectsByArtist(int artistId)
+        //{
+
+        //}
     }
 }

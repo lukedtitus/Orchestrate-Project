@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Orchestrate.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -12,7 +13,8 @@ namespace Orchestrate.Models
         [Display (Name = "ID Number")]
         public int ProjectId { get; set; }
         public string Name { get; set; }
-        public string Artist { get; set; }
+        public int ArtistId { get; set; }
+        public Artist Artist { get; set; }
 
         public override string ToString() => Name;
     }

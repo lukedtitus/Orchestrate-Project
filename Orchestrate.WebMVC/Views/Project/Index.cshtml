@@ -42,7 +42,7 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Artist)
+                @Html.DisplayFor(modelItem => item.Artist.ArtistName)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ProjectId }) |

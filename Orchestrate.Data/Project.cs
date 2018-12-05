@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,10 +17,8 @@ namespace Orchestrate.Data
         public Guid OwnerId { get; set; }
 
         [Required]
-        public string Name { get; set; }
-
-        [Required]
-        public string Artist { get; set; }
+        public string Name { get; set; }       
+        public int ArtistId { get; set; }
 
         [Required]
         public GenreEnum Genre { get; set; }
@@ -32,5 +31,7 @@ namespace Orchestrate.Data
 
         [Required]
         public double Sales { get; set; }
+
+        public virtual Artist Artist { get; set; }
     }
 }

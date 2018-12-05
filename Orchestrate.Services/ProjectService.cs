@@ -25,7 +25,7 @@ namespace Orchestrate.Services
                 {
                     OwnerId = _userId,
                     Name = model.Name,
-                    Artist = model.Artist,
+                    ArtistId = model.ArtistId,
                     Genre = model.Genre,
                     ReleaseYear = model.ReleaseYear,
                     Cost = model.Cost,
@@ -91,7 +91,7 @@ namespace Orchestrate.Services
                         .Single(e => e.ProjectId == model.ProjectId && e.OwnerId == _userId);
 
                 entity.Name = model.Name;
-                entity.Artist = model.Artist;
+                entity.ArtistId = model.ArtistId;
                 entity.Genre = model.Genre;
                 entity.ReleaseYear = model.ReleaseYear;
                 entity.Cost = model.Cost;
@@ -112,6 +112,14 @@ namespace Orchestrate.Services
 
                 ctx.Projects.Remove(entity);
                 return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public List<Artist> Artists()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.Artists.ToList();
             }
         }
 

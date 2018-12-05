@@ -64,6 +64,10 @@
     <Compile Include="Migrations\201812041652405_genreEnums.Designer.cs">
       <DependentUpon>201812041652405_genreEnums.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812051950453_foreignKeyAdded.cs" />
+    <Compile Include="Migrations\201812051950453_foreignKeyAdded.Designer.cs">
+      <DependentUpon>201812051950453_foreignKeyAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812041652405_genreEnums.resx">
       <DependentUpon>201812041652405_genreEnums.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812051950453_foreignKeyAdded.resx">
+      <DependentUpon>201812051950453_foreignKeyAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

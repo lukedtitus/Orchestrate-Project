@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using Orchestrate.Data;
 using Orchestrate.Models;
 using Orchestrate.Services;
 using System;
@@ -23,16 +24,12 @@ namespace Orchestrate.WebMVC.Controllers
             //return View(service.GetProjectById(id));
         }
 
-        //public ActionResult Index(int id)
-        //{
-        //    var service = CreateProjectService();
-
-        //    ViewBag.GenreData = service.GetGenreDataById(id);
-        //    return View(service.GetProjectById(id));
-        //}
-
         public ActionResult Create()
         {
+            var svc = CreateProjectService();
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var artistList = new SelectList(svc.Artists(), "ArtistId", "ArtistName");
+            ViewBag.ArtistId = artistList;
             return View();
         }
 
@@ -50,7 +47,7 @@ namespace Orchestrate.WebMVC.Controllers
                 return RedirectToAction("Index");
             };
             ModelState.AddModelError("", "Project could not be added");
-
+            ViewBag.ArtistId = new SelectList(service.Artists(), "ArtistId", "ArtistName", model.ArtistId);
             return View(model);
         }
 
@@ -80,12 +77,15 @@ namespace Orchestrate.WebMVC.Controllers
                 {
                     ProjectId = detail.ProjectId,
                     Name = detail.Name,
-                    Artist = detail.Artist,
+                    ArtistId = detail.ArtistId,
                     Genre = detail.Genre,
                     ReleaseYear = detail.ReleaseYear,
                     Cost = detail.Cost,
                     Sales = detail.Sales
                 };
+
+            var artistList = new SelectList(svc.Artists(), "ArtistId", "ArtistName", detail.ArtistId);
+            ViewBag.ArtistId = artistList;
 
             return View(model);
         }
@@ -109,6 +109,8 @@ namespace Orchestrate.WebMVC.Controllers
                 TempData["SaveResult"] = "Project information was updated.";
                 return RedirectToAction("Index");
             }
+            var artistList = new SelectList(service.Artists(), "ArtistId", "ArtistName", model.Artist.ArtistName);
+            ViewBag.ArtistId = artistList;
             return View();
         }
 
