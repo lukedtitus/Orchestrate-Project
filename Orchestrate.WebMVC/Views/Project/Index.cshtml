@@ -57,9 +57,9 @@
 @*<div class="col-lg-6">*@
 <div class="container">
     <div class="row">
-        <p class="chart-name">Projects by Genre</p>
+
         <div class="form-group">
-            <canvas id="genreChart" width="400" height="150"></canvas>
+            <canvas id="genreChart" width="800" height="300"></canvas>
         </div>
     </div>
 </div>
@@ -73,8 +73,9 @@
             type: 'doughnut',
             data:
             {
+                labels: ["Alternative", "Blues", "Comedy", "Children's Music", "Classical", "Country", "Electronic", "Holiday", "Opera", "Singer/Songwriter", "Jazz", "Latino", "New Age", "Pop", "R&B/Soul", "Soundtrack", "Dance", "Hip-Hop/Rap", "World", "Rock", "Christian & Gospel", "Vocal", "Reggae", "Easy Listening", "J-Pop", "Enka", "Kayokyoku", "Fitness & Workout", "K-Pop", "Karaoke", "Instrumental", "Brazilian", "Spoken Word"],
                 datasets: [{
-                    label: 'enter enum values lol',
+                    labels: 'Recorded Projects by Genre',
                     data: [@ViewBag.GenreData],
                     backgroundColor: [
                         '#00CCFF',
@@ -111,7 +112,21 @@
                         '#666633',
                         '#99CCCC'
                     ],
+                    borderWidth: 0.5,
+                    borderColor: '#777',
+                    hoverBorderWidth: 2,
+                    hoverBorderColor: '#777'
                 }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Projects Sorted by Genre',
+                    fontSize: 25
+                },
+                legend: {
+                    display:false
+                }
             }
         });
     </script>
