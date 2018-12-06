@@ -12,10 +12,10 @@ namespace Orchestrate.Models
     {
         [Display (Name = "ID Number")]
         public int ShowId { get; set; }
-        public int ArtistId { get; set; }
         [Display(Name = "Title / Tour Name")]
         public string Title { get; set; }
         public DateTime Date { get; set; }
+        public int ArtistId { get; set; }
         public Artist Artist { get; set; }
 
         public override string ToString() => Title;

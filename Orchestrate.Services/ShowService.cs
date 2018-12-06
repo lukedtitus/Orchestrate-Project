@@ -50,7 +50,7 @@ namespace Orchestrate.Services
                             new ShowListItem
                             {
                                 ShowId = e.ShowId,
-                                ArtistId = e.ArtistId,
+                                Artist = e.Artist,
                                 Title = e.Title,
                                 Date = e.Date
                             }
