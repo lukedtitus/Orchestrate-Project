@@ -23,7 +23,8 @@ namespace Orchestrate.Services
                 new Show()
                 {
                     OwnerId = _userId,
-                    Artist = model.Artist,
+                    ArtistId = model.ArtistId,
+                    Title = model.Title,
                     CityOfVenue = model.CityOfVenue,
                     Date = model.Date,
                     Cost = model.Cost,
@@ -49,7 +50,8 @@ namespace Orchestrate.Services
                             new ShowListItem
                             {
                                 ShowId = e.ShowId,
-                                Artist = e.Artist,
+                                ArtistId = e.ArtistId,
+                                Title = e.Title,
                                 Date = e.Date
                             }
                     );
@@ -70,6 +72,7 @@ namespace Orchestrate.Services
                     {
                         ShowId = entity.ShowId,
                         Artist = entity.Artist,
+                        Title = entity.Title,
                         CityOfVenue = entity.CityOfVenue,
                         Date = entity.Date,
                         Cost = entity.Cost,
@@ -87,7 +90,8 @@ namespace Orchestrate.Services
                         .Shows
                         .Single(e => e.ShowId == model.ShowId && e.OwnerId == _userId);
 
-                entity.Artist = model.Artist;
+                entity.ArtistId = model.ArtistId;
+                entity.Title = model.Title;
                 entity.CityOfVenue = model.CityOfVenue;
                 entity.Date = model.Date;
                 entity.Cost = model.Cost;
@@ -108,6 +112,14 @@ namespace Orchestrate.Services
 
                 ctx.Shows.Remove(entity);
                 return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public List<Artist> Artists()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.Artists.ToList();
             }
         }
     }

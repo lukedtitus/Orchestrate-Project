@@ -64,8 +64,7 @@ namespace Orchestrate.WebMVC.Controllers
                     ArtistId = detail.ArtistId,
                     ArtistName = detail.ArtistName,
                     NumberOfMembers = detail.NumberOfMembers,
-                    Genre = detail.Genre,
-                    ProjectsReleased = detail.ProjectsReleased
+                    Genre = detail.Genre
                 };
             return View(model);
         }

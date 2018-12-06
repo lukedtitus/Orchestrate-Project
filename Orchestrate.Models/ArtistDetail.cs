@@ -18,9 +18,7 @@ namespace Orchestrate.Models
         [Display (Name = "Number of members")]
         public int NumberOfMembers { get; set; }
         public GenreEnum Genre { get; set; }
-        
-        [Display (Name = "Projects Released")]
-        public int ProjectsReleased { get; set; }
+
         public override string ToString() => $"[{ArtistId}] {ArtistName}";
     }
 }

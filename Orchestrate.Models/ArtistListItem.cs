@@ -13,8 +13,6 @@ namespace Orchestrate.Models
         public int ArtistId { get; set; }
         [Display (Name = "Name")]
         public string ArtistName { get; set; }
-        [Display (Name = "Projects")]
-        public string Projects { get; set; }
 
         public override string ToString() => ArtistName;
     }

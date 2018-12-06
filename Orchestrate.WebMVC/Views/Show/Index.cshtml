@@ -24,6 +24,9 @@
             @Html.DisplayNameFor(model => model.ShowId)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Artist)
         </th>
         <th>
@@ -39,7 +42,10 @@
                 @Html.DisplayFor(modelItem => item.ShowId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Artist)
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Artist.ArtistName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Date)

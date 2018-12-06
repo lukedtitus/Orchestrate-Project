@@ -15,14 +15,17 @@ namespace Orchestrate.WebMVC.Controllers
         // GET: Show
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new ShowService(userId);
+            var service = CreateShowService();
             var model = service.GetShows();
             return View(model);
         }
 
         public ActionResult Create()
         {
+            var svc = CreateShowService();
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var artistList = new SelectList(svc.Artists(), "ArtistId", "ArtistName");
+            ViewBag.ArtistId = artistList;
             return View();
         }
 
@@ -40,6 +43,7 @@ namespace Orchestrate.WebMVC.Controllers
                 return RedirectToAction("Index");
             };
             ModelState.AddModelError("", "Show could not be added.");
+            ViewBag.ArtistId = new SelectList(service.Artists(), "ArtistId", "ArtistName", model.ArtistId);
 
             return View(model);
         }
@@ -66,6 +70,9 @@ namespace Orchestrate.WebMVC.Controllers
                     Cost = detail.Cost,
                     Sales = detail.Sales
                 };
+
+            var artistList = new SelectList(service.Artists(), "ArtistId", "ArtistName", detail.ArtistId);
+            ViewBag.ArtistId = artistList;
             return View(model);
         }
 
@@ -88,6 +95,8 @@ namespace Orchestrate.WebMVC.Controllers
                 TempData["SaveResult"] = "The show was updated";
                 return RedirectToAction("Index");
             }
+            var artistList = new SelectList(service.Artists(), "ArtistId", "ArtistName", model.Artist.ArtistId);
+            ViewBag.ArtistId = artistList;
             return View();
         }
 

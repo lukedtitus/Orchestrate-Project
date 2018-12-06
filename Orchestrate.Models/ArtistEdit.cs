@@ -17,7 +17,5 @@ namespace Orchestrate.Models
         [Display (Name = "Number of Members")]
         public int NumberOfMembers { get; set; }
         public GenreEnum Genre { get; set; }
-        [Display (Name = "Projects Released")]
-        public int ProjectsReleased { get; set; }
     }
 }

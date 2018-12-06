@@ -15,8 +15,11 @@ namespace Orchestrate.Data
         [Required]
         public Guid OwnerId { get; set; }
 
+        public int ArtistId { get; set; }
+
         [Required]
-        public string Artist { get; set; }
+        [Display (Name = "Title / Tour Name")]
+        public string Title { get; set; }
 
         [Required]
         public string CityOfVenue { get; set; }
@@ -29,5 +32,7 @@ namespace Orchestrate.Data
 
         [Required]
         public double Sales { get; set; }
+
+        public virtual Artist Artist { get; set; }
     }
 }

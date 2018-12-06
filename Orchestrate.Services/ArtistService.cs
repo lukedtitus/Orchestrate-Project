@@ -25,8 +25,7 @@ namespace Orchestrate.Services
                     OwnerId = _userId,
                     ArtistName = model.ArtistName,
                     NumberOfMembers = model.NumberOfMembers,
-                    Genre = model.Genre,
-                    ProjectsReleased = model.ProjectsReleased
+                    Genre = model.Genre
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -69,8 +68,7 @@ namespace Orchestrate.Services
                         ArtistId = entity.ArtistId,
                         ArtistName = entity.ArtistName,
                         NumberOfMembers = entity.NumberOfMembers,
-                        Genre = entity.Genre,
-                        ProjectsReleased = entity.ProjectsReleased
+                        Genre = entity.Genre
                     };
             }
         }
@@ -87,7 +85,6 @@ namespace Orchestrate.Services
                 entity.ArtistName = model.ArtistName;
                 entity.NumberOfMembers = model.NumberOfMembers;
                 entity.Genre = model.Genre;
-                entity.ProjectsReleased = model.ProjectsReleased;
 
                 return ctx.SaveChanges() == 1;
             }
@@ -106,10 +103,5 @@ namespace Orchestrate.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-
-        //public bool GetProjectsByArtist(int artistId)
-        //{
-
-        //}
     }
 }
