@@ -17,9 +17,11 @@ namespace Orchestrate.Models
         public string Title { get; set; }
         [Display (Name = "City of Venue")]
         public string CityOfVenue { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Date { get; set; }
-        public double Cost { get; set; }
-        public double Sales { get; set; }
+        public string Cost { get; set; }       
+        public string Sales { get; set; }
 
         public Artist Artist { get; set; }
     }

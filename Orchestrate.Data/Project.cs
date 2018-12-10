@@ -27,10 +27,10 @@ namespace Orchestrate.Data
         public int ReleaseYear { get; set; }
 
         [Required]
-        public double Cost { get; set; }
+        public string Cost { get; set; }
 
         [Required]
-        public double Sales { get; set; }
+        public string Sales { get; set; }
 
         public virtual Artist Artist { get; set; }
     }

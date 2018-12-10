@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background: dimgrey;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +22,54 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+#homePage {
+    background-image: url(https://images.pexels.com/photos/172277/pexels-photo-172277.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    width: 100%;
+    background-size: cover;
+    height: 100%;
+    margin-bottom: 0;
+}
+
+.carousel-inner img{
+    margin: 0 auto;
+}
+
+#indexbody {
+    background-image: url(https://images.pexels.com/photos/908283/pexels-photo-908283.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+}
+
+#carousel{
+    background-size: cover;
+}
+
+#artistindexbody{
+    background-color: black;
+}
+
+#tablestable {
+    background-color: #1a1a1a;
+}
+
+#tablestable th{
+    color: #bfbfbf;
+}
+
+#tablestable td{
+    color: white;
+}
+
+#tablesJumbotron {
+    background-image: url(https://images.pexels.com/photos/158736/grid-macro-network-close-158736.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-size: cover;
+    font
+}
+
+#tablesJumbotron h2{
+    color: white;
+}
+
+#tablesJumbotron h4{
+    color: white;
 }

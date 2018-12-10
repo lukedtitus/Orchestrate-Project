@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Edit";
 }
+<script src="~/Scripts/bootstrap.min.js"></script>
 
 <h2>Edit</h2>
 
@@ -12,7 +13,6 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>ArtistEdit</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 

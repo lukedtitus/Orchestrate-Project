@@ -10,12 +10,13 @@ namespace Orchestrate.Models
 {
     public class ArtistDetail
     {
+        [Display (Name = "ID Number")]
         public int ArtistId { get; set; }
 
         [Display (Name = "Artist")]
         public string ArtistName { get; set; }
 
-        [Display (Name = "Number of members")]
+        [Display (Name = "Number of Members")]
         public int NumberOfMembers { get; set; }
         public GenreEnum Genre { get; set; }
 

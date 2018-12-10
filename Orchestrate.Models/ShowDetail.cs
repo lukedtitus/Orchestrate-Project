@@ -18,8 +18,8 @@ namespace Orchestrate.Models
         [Display (Name = "City of Venue")]
         public string CityOfVenue { get; set; }
         public DateTime Date { get; set; }
-        public double Cost { get; set; }
-        public double Sales { get; set; }
+        public string Cost { get; set; }
+        public string Sales { get; set; }
         public override string ToString() => $"[{ShowId}] {Title}";
 
         public Artist Artist { get; set; }

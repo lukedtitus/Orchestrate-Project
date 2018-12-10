@@ -13,7 +13,8 @@ namespace Orchestrate.Models
         [Required]
         [Display (Name = "Name")]
         public string ArtistName { get; set; }
-        [Display (Name = "Number of members")]
+
+        [Display (Name = "Number of Members")]
         public int NumberOfMembers { get; set; }
         public GenreEnum Genre { get; set; }
 

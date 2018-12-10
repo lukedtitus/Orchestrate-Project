@@ -6,34 +6,35 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+        <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Orchestrate", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <li>@Html.ActionLink("Artists", "Index", "Artist")</li>
-                    }
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <li>@Html.ActionLink("Projects", "Index", "Project")</li>
-                    }
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <li>@Html.ActionLink("Shows", "Index", "Show")</li>
-                    }
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tables <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li>@Html.ActionLink("Artists", "Index", "Artist")</li>
+                                <li>@Html.ActionLink("Projects", "Index", "Project")</li>
+                                <li>@Html.ActionLink("Performances", "Index", "Show")</li>
+                            }
+                        </ul>
+                    </li>
+                    
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
@@ -41,13 +42,19 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div id="sidebar-wrapper">
+        <nav id="spy">
+            <ul class="sidebar-nav nav"
+        </nav>
+    </div>
+
+    @*<div class="container body-content">*@
         @RenderBody()
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
-    </div>
+    @*</div>*@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

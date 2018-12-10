@@ -4,45 +4,59 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<script src="~/Scripts/bootstrap.min.js"></script>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-@if (TempData.ContainsKey("SaveResult"))
-{
-    <div class="alert alert-success fade in" role="alert">
-        <button type="button" class="close" data-dismiss="alert">
-            <span>&times;</span>
-        </button>
-        @TempData["SaveResult"]
+<body id="artistindexbody">
+    <div class="jumbotron" id="tablesJumbotron">
+        <div class="container">
+    <h2 class="text-center">Artists</h2>
+    <h4 class="text-center">Enter all of the Artists that you currently manage</h4>
+    <p class="text-center">
+        @Html.ActionLink("Add Artist", "Create")
+    </p>
+
+        </div>
     </div>
-}
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ArtistId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ArtistName)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ArtistId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ArtistName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.ArtistId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ArtistId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ArtistId })
-        </td>
-    </tr>
-}
 
-</table>
+    @if (TempData.ContainsKey("SaveResult"))
+    {
+        <div class="alert alert-success fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span>
+            </button>
+            @TempData["SaveResult"]
+        </div>
+    }
+        <div class="container" id="tablestable">
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ArtistId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ArtistName)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ArtistId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ArtistName)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ArtistId }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.ArtistId }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ArtistId })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+</body>
