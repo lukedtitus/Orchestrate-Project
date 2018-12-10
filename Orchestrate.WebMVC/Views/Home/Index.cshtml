@@ -3,7 +3,7 @@
 }
 
 <link href="~/Content/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
-<body id="indexbody">
+<body id="homebody">
     <div class="jumbotron" id="homePage">
         <div class="container">
             <h1 class="text-center">ORCHESTRATE</h1>
@@ -23,31 +23,24 @@
 
         @*Wrapper for Slides*@
         <div class="carousel-inner" role="listbox">
-            @*<div class="item active">
-                    <img src="https://images.pexels.com/photos/953213/pexels-photo-953213.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="..." />
-                    <div class="carousel-caption">
-                        <h3>Orchestrate</h3>
-                        <p>A content organizing application for Artist Managers</p>
-                    </div>
-                </div>*@
             <div class="item active">
                 <img src="https://images.pexels.com/photos/210922/pexels-photo-210922.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="..." />
                 <div class="carousel-caption">
-                    <h3>Artists</h3>
+                    <h3>@Html.ActionLink("Artists", "Index", "Artist", null, new { style = "color:white" })</h3>
                     <p>Add an artist in the Artists table to keep track of all the artists you manage</p>
                 </div>
             </div>
             <div class="item">
                 <img src="https://images.pexels.com/photos/257904/pexels-photo-257904.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="..." />
                 <div class="carousel-caption">
-                    <h3>Projects</h3>
+                    <h3>@Html.ActionLink("Projects", "Index", "Project", null, new { style = "color:white" })</h3>
                     <p>Keep records of all the projects that you have managed in the Projects table</p>
                 </div>
             </div>
             <div class="item">
                 <img src="https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="..." />
                 <div class="carousel-caption">
-                    <h3>Performances</h3>
+                    <h3>@Html.ActionLink("Performances", "Index", "Show", null, new { style = "color:white" })</h3>
                     <p>The Performances table stores information about any of your artist's performances, no matter how big or small</p>
                 </div>
             </div>
