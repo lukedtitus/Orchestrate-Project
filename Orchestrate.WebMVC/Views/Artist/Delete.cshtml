@@ -5,12 +5,10 @@
 }
 <script src="~/Scripts/bootstrap.min.js"></script>
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <hr />
-    <dl class="dl-horizontal">
+<h2 class="text-center" id="textwhite">Delete</h2>
+<h3 class="text-center" id="textwhite" style="font-size: 80%;">Are you sure you want to delete this?</h3>
+<div id="notecardform2" style="background-color: rgba(252,252,252,0.2)">
+    <dl class="dl-horizontal" id="detailspage">
         <dt>
             @Html.DisplayNameFor(model => model.ArtistId)
         </dt>
@@ -48,9 +46,11 @@
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+        <div class="form-actions no-color text-center" id="submitbuttondiv2">
+            <input type="submit" value="Delete" class="btn btn-default" id="submitbutton" /> |            
         </div>
     }
+</div>
+<div class="text-center" style="padding-top:10px;">
+    @Html.ActionLink("Back to List", "Index", null, new { style = "color:white;" })
 </div>

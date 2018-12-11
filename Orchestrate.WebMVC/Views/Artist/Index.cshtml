@@ -12,7 +12,7 @@
     <h2 class="text-center">Artists</h2>
     <h4 class="text-center">Enter all of the Artists that you currently manage</h4>
     <p class="text-center">
-        @Html.ActionLink("Add Artist", "Create")
+        @Html.ActionLink("Add Artist", "Create", null, new { style = "color: white; font-size: 12px;" })
     </p>
 
         </div>
@@ -55,9 +55,9 @@
                                     @Html.DisplayFor(modelItem => item.ArtistName)
                                 </td>
                                 <td>
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.ArtistId }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.ArtistId }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.ArtistId })
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.ArtistId, style = "color:white;" }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.ArtistId, style = "color:white;" }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.ArtistId, style = "color:white;" })
                                 </td>
                             </tr>
                         }

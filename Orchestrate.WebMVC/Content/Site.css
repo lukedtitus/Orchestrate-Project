@@ -1,10 +1,63 @@
-﻿#homebody {
+﻿body{
+    padding-top: 60px;
+}
+
+html body{
+    background-color: black;
+}
+
+#submitbutton {
+    background-color: #262626;
+    color: white;
+    margin: 0 auto;
+}
+
+#submitbuttondiv{
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+    padding-bottom: 10px;
+}
+
+#submitbuttondiv2{
+    /*margin: 0 auto;*/
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+}
+
+#textwhite{
+    color: white;
+
+}
+
+#Genre {
+    background-color: #262626;
+}
+
+#dropdownlist{
+    color: white
+}
+
+#detailspage{
+    color: white;
+}
+
+#notecardform2{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 500px;
+    margin: 0 auto;
+    border-radius: 10px;
+    /*padding-left: 10px;
+    padding-right: 10px;*/
+}
+
+#homebody {
     padding-top: 50px;
     padding-bottom: 20px;
     background-image: url(https://images.pexels.com/photos/908283/pexels-photo-908283.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
 }
 
-#nav{
+#nav {
     position: relative fixed;
 }
 
@@ -128,7 +181,6 @@ section {
 #tablesJumbotron {
     background-image: url(https://images.pexels.com/photos/158736/grid-macro-network-close-158736.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
     background-size: cover;
-    font
 }
 
 #tablesJumbotron h2{
@@ -136,5 +188,11 @@ section {
 }
 
 #tablesJumbotron h4{
+    color: white;
+}
+
+#projectsJumbotron {
+    background-image: url(https://images.pexels.com/photos/158736/grid-macro-network-close-158736.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-size: cover;
     color: white;
 }

@@ -4,70 +4,80 @@
     ViewBag.Title = "Index";
 }
 <script src="~/Scripts/bootstrap.min.js"></script>
+<body>
+    <div class="jumbotron" id="projectsJumbotron">
+        <div class="container">
+            <h2 class="text-center">Artists</h2>
+            <h4 class="text-center">Enter all of the Artists that you currently manage</h4>
+            <p class="text-center">
+                @Html.ActionLink("Add Artist", "Create", null, new { style = "color: white; font-size: 12px;" })
+            </p>
 
-<h2>Projects</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-@if (TempData.ContainsKey("SaveResult"))
-{
-    <div class="alert alert-success fade in" role="alert">
-        <button type="button" class="close" data-dismiss="alert">
-            <span>&times;</span>
-        </button>
-        @TempData["SaveResult"]
-    </div>
-}
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ProjectId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Artist)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProjectId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Artist.ArtistName)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ProjectId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ProjectId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ProjectId })
-            </td>
-        </tr>
-    }
-
-</table>
-
-@*<div class="col-lg-6">*@
-<div class="container">
-    <div class="row">
-
-        <div class="form-group">
-            <canvas id="genreChart" width="800" height="300"></canvas>
         </div>
     </div>
-</div>
+    <h2>Projects</h2>
 
-@section scripts {
-    <script src="~/Scripts/Chart.js"></script>
-    <script>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    @if (TempData.ContainsKey("SaveResult"))
+    {
+        <div class="alert alert-success fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span>
+            </button>
+            @TempData["SaveResult"]
+        </div>
+    }
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Artist)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Artist.ArtistName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ProjectId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ProjectId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ProjectId })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    @*<div class="col-lg-6">*@
+    <div class="container">
+        <div class="row">
+
+            <div class="form-group">
+                <canvas id="genreChart" width="800" height="300"></canvas>
+            </div>
+        </div>
+    </div>
+
+    @section scripts {
+        <script src="~/Scripts/Chart.js"></script>
+        <script>
         var c = document.getElementById("genreChart");
         var ctx = c.getContext("2d");
         var myDonutChart = new Chart(ctx, {
@@ -130,5 +140,6 @@
                 }
             }
         });
-    </script>
-}
+        </script>
+    }
+</body>
