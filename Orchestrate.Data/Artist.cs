@@ -64,7 +64,7 @@ namespace Orchestrate.Data
         public Guid OwnerId { get; set; }
 
         [Required]
-        [Display (Name = "Name")]
+        [Display (Name = "Artist Name")]
         public string ArtistName { get; set; }
 
         [Required]

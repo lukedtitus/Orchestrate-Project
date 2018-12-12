@@ -6,20 +6,15 @@
 <script src="~/Scripts/bootstrap.min.js"></script>
 <body>
     <div class="jumbotron" id="projectsJumbotron">
-        <div class="container">
-            <h2 class="text-center">Artists</h2>
-            <h4 class="text-center">Enter all of the Artists that you currently manage</h4>
+        <div class="container" id="jumbotroncontainer">
+            <h2 class="text-center">Projects</h2>
+            <h4 class="text-center">Enter all of the Projects that you have managed</h4>
             <p class="text-center">
-                @Html.ActionLink("Add Artist", "Create", null, new { style = "color: white; font-size: 12px;" })
+                @Html.ActionLink("Add Project", "Create", null, new { style = "color: white; font-size: 12px;" })
             </p>
 
         </div>
     </div>
-    <h2>Projects</h2>
-
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
     @if (TempData.ContainsKey("SaveResult"))
     {
         <div class="alert alert-success fade in" role="alert">
@@ -29,55 +24,65 @@
             @TempData["SaveResult"]
         </div>
     }
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ProjectId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Artist)
-            </th>
-            <th></th>
-        </tr>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8" id="tablestable">
+                        <div class="tbl-header">
+                            <table class="table" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ProjectId)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Name)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Artist)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="tbl-content">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ProjectId)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Artist.ArtistName)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Edit", "Edit", new { id = item.ProjectId, style = "color:white;" }) |
+                                            @Html.ActionLink("Details", "Details", new { id = item.ProjectId, style = "color:white;" }) |
+                                            @Html.ActionLink("Delete", "Delete", new { id = item.ProjectId, style = "color:white;" })
+                                        </td>
+                                    </tr>
+                                }
+                            </table>
+                        </div>
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProjectId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Artist.ArtistName)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ProjectId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.ProjectId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ProjectId })
-                </td>
-            </tr>
-        }
+                        @*<div class="col-lg-6">*@
+                    </div>
 
-    </table>
-
-    @*<div class="col-lg-6">*@
-    <div class="container">
-        <div class="row">
-
-            <div class="form-group">
-                <canvas id="genreChart" width="800" height="300"></canvas>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <canvas id="genreChart" width="50%" height="52%"></canvas>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-
-    @section scripts {
-        <script src="~/Scripts/Chart.js"></script>
-        <script>
+        </section>
+</body>
+@section scripts {
+    <script src="~/Scripts/Chart.js"></script>
+    <script>
         var c = document.getElementById("genreChart");
         var ctx = c.getContext("2d");
         var myDonutChart = new Chart(ctx, {
@@ -126,20 +131,20 @@
                     borderWidth: 0.5,
                     borderColor: '#777',
                     hoverBorderWidth: 2,
-                    hoverBorderColor: '#777'
+                    hoverBorderColor: '#777',
                 }]
             },
             options: {
                 title: {
                     display: true,
                     text: 'Projects Sorted by Genre',
-                    fontSize: 25
+                    fontSize: 25,
+                    fontColor: 'white'
                 },
                 legend: {
                     display:false
                 }
             }
         });
-        </script>
-    }
-</body>
+    </script>
+}                

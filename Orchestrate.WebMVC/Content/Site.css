@@ -9,7 +9,8 @@ html body{
 #submitbutton {
     background-color: #262626;
     color: white;
-    margin: 0 auto;
+    margin-left: 0 auto;
+    margin-right: 0 auto;
 }
 
 #submitbuttondiv{
@@ -26,11 +27,11 @@ html body{
 
 #textwhite{
     color: white;
-
 }
 
 #Genre {
     background-color: #262626;
+    color: white;
 }
 
 #dropdownlist{
@@ -47,6 +48,7 @@ html body{
     width: 500px;
     margin: 0 auto;
     border-radius: 10px;
+    opacity: 0.7;
     /*padding-left: 10px;
     padding-right: 10px;*/
 }
@@ -192,7 +194,26 @@ section {
 }
 
 #projectsJumbotron {
-    background-image: url(https://images.pexels.com/photos/158736/grid-macro-network-close-158736.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-image: url(https://images.pexels.com/photos/63703/pexels-photo-63703.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
     background-size: cover;
     color: white;
+}
+
+#jumbotroncontainer {
+    background-color: dimgrey;
+    background-size: cover;
+    opacity: 0.8;
+    /*margin-left: 0 auto;
+    margin-right: 0 auto;*/
+    margin: auto;
+    width: 50%;
+    border-radius: 80%;
+    /*background: linear-gradient(to right, white, transparent 90%);*/
+    background: radial-gradient(dimgrey, transparent);
+    /*box-shadow: 0px 0px 80px white;*/
+    border-collapse: collapse
+}
+
+#artistname {
+    background-color: #262626;
 }

@@ -80,6 +80,10 @@
     <Compile Include="Migrations\201812101458128_ihatemigrations.Designer.cs">
       <DependentUpon>201812101458128_ihatemigrations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812121431425_artistdisplayname.cs" />
+    <Compile Include="Migrations\201812121431425_artistdisplayname.Designer.cs">
+      <DependentUpon>201812121431425_artistdisplayname.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -107,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812101458128_ihatemigrations.resx">
       <DependentUpon>201812101458128_ihatemigrations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812121431425_artistdisplayname.resx">
+      <DependentUpon>201812121431425_artistdisplayname.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

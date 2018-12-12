@@ -13,7 +13,6 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal" id="notecardform2" style="background-color: rgba(252,252,252,0.2)">
-        <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
         @Html.HiddenFor(model => model.ArtistId)
@@ -41,7 +40,7 @@
             </div>
         </div>
 
-        <div class="form-group text-center" id="submitbuttondiv2">
+        <div class="form-group" id="submitbuttondiv2">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="btn btn-default" id="submitbutton" />
             </div>
