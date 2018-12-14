@@ -199,6 +199,12 @@ section {
     color: white;
 }
 
+#performancesJumbotron {
+    background: url(https://images.pexels.com/photos/167628/pexels-photo-167628.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) center;
+    background-size: cover;
+    color: white;
+}
+
 #jumbotroncontainer {
     background-color: dimgrey;
     background-size: cover;

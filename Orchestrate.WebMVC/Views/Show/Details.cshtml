@@ -5,11 +5,10 @@
 }
 <script src="~/Scripts/bootstrap.min.js"></script>
 
-<h2>Details</h2>
+<h2 class="text-center" id="textwhite">Details</h2>
 
-<div>
-    <hr />
-    <dl class="dl-horizontal">
+<div id="notecardform2" style="background-color: rgba(252,252,252,0.2); padding-top: 30px;">
+    <dl class="dl-horizontal" id="detailspage">
         <dt>
             @Html.DisplayNameFor(model => model.ShowId)
         </dt>
@@ -68,7 +67,7 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.ShowId }) |
-    @Html.ActionLink("Back to List", "Index")
+<p class="text-center" style="padding-top: 15px;">
+    @Html.ActionLink("Edit", "Edit", null, new { id=Model.ShowId, style = "color:white;" }) |
+    @Html.ActionLink("Back to List", "Index", null, new { style = "color:white;"})
 </p>

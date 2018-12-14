@@ -13,35 +13,35 @@
     @Html.AntiForgeryToken()
     
 
-    <div class="form-horizontal" id="notecardform2" style="background-color: rgba(252,252,252,0.2)">
+    <div class="form-horizontal" id="notecardform2" style="background-color: rgba(252,252,252,0.2); padding-top: 30px;">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ArtistName, htmlAttributes: new { @class = "control-label col-md-2", style = "color:white;" })
-            <div class="col-md-10 text-center">
+            @Html.LabelFor(model => model.ArtistName, htmlAttributes: new { @class = "control-label col-md-4", style = "color:white;" })
+            <div class="col-md-8 text-center">
                 @Html.EditorFor(model => model.ArtistName, new { htmlAttributes = new { @class = "form-control", style = "background-color:#262626; color:white;" } })
                 @Html.ValidationMessageFor(model => model.ArtistName, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.NumberOfMembers, htmlAttributes: new { @class = "control-label col-md-2", style = "color:white;" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.NumberOfMembers, htmlAttributes: new { @class = "control-label col-md-4", style = "color:white;" })
+            <div class="col-md-8">
                 @Html.EditorFor(model => model.NumberOfMembers, new { htmlAttributes = new { @class = "form-control", style = "background-color:#262626; color:white;" } })
                 @Html.ValidationMessageFor(model => model.NumberOfMembers, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Genre, htmlAttributes: new { @class = "control-label col-md-2", style = "color:white;" })
-            <div class="col-md-10" id="dropdownlist">
+            @Html.LabelFor(model => model.Genre, htmlAttributes: new { @class = "control-label col-md-4", style = "color:white;" })
+            <div class="col-md-8" id="dropdownlist">
                 @Html.EnumDropDownListFor(model => model.Genre, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Genre, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group" id="submitbuttondiv2">
-            <div class="col-md-offset-2 col-md-10">
+            <div class="col-md-12 text-center">
                 <input type="submit" value="Create" class="btn btn-default" id="submitbutton"/>
             </div>
         </div>
@@ -49,7 +49,7 @@
 
 }
 
-<div class="text-center">
+<div class="text-center" style="padding-top: 15px;">
     @Html.ActionLink("Back to List", "Index", null, new { style = "color: white;" })
 </div>
 

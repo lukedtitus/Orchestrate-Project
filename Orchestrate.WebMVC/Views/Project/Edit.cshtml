@@ -12,68 +12,68 @@
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal" id="notecardform2" style="background-color: rgba(252,252,252,0.2)">
+    <div class="form-horizontal" id="notecardform2" style="background-color: rgba(252,252,252,0.2); padding-top: 30px;">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
         @Html.HiddenFor(model => model.ProjectId)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2", style = "color:white;" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-4", style = "color:white;" })
+            <div class="col-md-8">
                 @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", style = "background-color:#262626; color:white;" } })
                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Artist.ArtistName, htmlAttributes: new { @class = "control-label col-md-2", style = "color:white;" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.Artist.ArtistName, htmlAttributes: new { @class = "control-label col-md-4", style = "color:white;" })
+            <div class="col-md-8">
                 @Html.DropDownList("ArtistId", null, htmlAttributes: new { @class = "form-control", style = "background-color:#262626; color:white;" }) 
                 @Html.ValidationMessageFor(model => model.ArtistId, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Genre, htmlAttributes: new { @class = "control-label col-md-2", style = "color:white;" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.Genre, htmlAttributes: new { @class = "control-label col-md-4", style = "color:white;" })
+            <div class="col-md-8">
                 @Html.EnumDropDownListFor(model => model.Genre, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Genre, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ReleaseYear, htmlAttributes: new { @class = "control-label col-md-2", style = "color:white;" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.ReleaseYear, htmlAttributes: new { @class = "control-label col-md-4", style = "color:white;" })
+            <div class="col-md-8">
                 @Html.EditorFor(model => model.ReleaseYear, new { htmlAttributes = new { @class = "form-control", style = "background-color:#262626; color:white;" } })
                 @Html.ValidationMessageFor(model => model.ReleaseYear, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Cost, htmlAttributes: new { @class = "control-label col-md-2", style = "color:white;" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.Cost, htmlAttributes: new { @class = "control-label col-md-4", style = "color:white;" })
+            <div class="col-md-8">
                 @Html.EditorFor(model => model.Cost, new { htmlAttributes = new { @class = "form-control", style = "background-color:#262626; color:white;" } })
                 @Html.ValidationMessageFor(model => model.Cost, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Sales, htmlAttributes: new { @class = "control-label col-md-2", style = "color:white;" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.Sales, htmlAttributes: new { @class = "control-label col-md-4", style = "color:white;" })
+            <div class="col-md-8">
                 @Html.EditorFor(model => model.Sales, new { htmlAttributes = new { @class = "form-control", style = "background-color:#262626; color:white;" } })
                 @Html.ValidationMessageFor(model => model.Sales, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group" id="submitbuttondiv2">
-            <div class="col-md-offset-2 col-md-10">
+            <div class="col-md-12 text-center">
                 <input type="submit" value="Save" class="btn btn-default" id="submitbutton" />
             </div>
         </div>
     </div>
 }
 
-<div class="text-center">
+<div class="text-center" style="padding-top: 15px;">
     @Html.ActionLink("Back to List", "Index", null, new { style = "color:white;"})
 </div>
 

@@ -4,59 +4,73 @@
     ViewBag.Title = "Index";
 }
 <script src="~/Scripts/bootstrap.min.js"></script>
+<body>
+    <div class="jumbotron" id="performancesJumbotron">
+        <div class="container" id="jumbotroncontainer">
+            <h2 class="text-center">Performances</h2>
+            <h4 class="text-center">Enter all of your Artist's concerts and tours</h4>
+            <p class="text-center">
+                @Html.ActionLink("Add Performance", "Create", null, new { style = "color: white; font-size: 12px;" })
+            </p>
 
-<h2>Performances</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-@if (TempData.ContainsKey("SaveResult"))
-{
-    <div class="alert alert-success fade in" role="alert">
-        <button type="button" class="close" data-dismiss="alert">
-            <span>&times;</span>
-        </button>
-        @TempData["SaveResult"]
+        </div>
     </div>
-}
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ShowId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Artist)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Date)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
+    @if (TempData.ContainsKey("SaveResult"))
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ShowId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Artist.ArtistName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.ShowId }) |
-                @Html.ActionLink("Details", "Details", new { id=item.ShowId }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.ShowId })
-            </td>
-        </tr>
+        <div class="alert alert-success fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span>
+            </button>
+            @TempData["SaveResult"]
+        </div>
     }
-
-</table>
+        <section>
+            <div class="container" id="tablestable">
+                <div class="tbl-header">
+                    <table class="table" cellpadding="=0" cellspacing="0" border="0">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ShowId)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Title)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Artist)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Date)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tbl-content">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ShowId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Artist.ArtistName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Date)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.ShowId }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.ShowId }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.ShowId })
+                            </td>
+                        </tr>
+                    }
+                    </table>
+                </div>
+            </div>
+        </section>
+</body>
