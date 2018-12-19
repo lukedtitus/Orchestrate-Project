@@ -1,9 +1,12 @@
-﻿body{
+﻿@import url('https://fonts.googleapis.com/css?family=Montserrat|Nunito|Open+Sans');
+
+body{
     padding-top: 60px;
 }
 
-html body{
+html body {
     background-color: black;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #submitbutton {
